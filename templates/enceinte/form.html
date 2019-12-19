@@ -1,0 +1,85 @@
+
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+ {% csrf_token %}
+  <div class="wrapper">
+    <div class="columns">
+      <aside class="column is-2 aside">
+        <nav class="menu">
+          <p class="menu-label">
+            General
+          </p>
+          <ul class="menu-list">
+            <li><a  href="#"><span class="icon is-small"><i class="fa fa-tachometer"></i></span> Dashboard</a></li>
+          </ul>
+          <p class="menu-label">
+            Skills
+          </p>
+          <ul class="menu-list">
+            <li><a href=""><span class="icon is-small"><i class="fa fa-table"></i></span>Skill-NLU</a></li>
+            <li><a href=""><span class="icon is-small"><i class="fa fa-table"></i></span>Skill-ASR</a></li>
+            <li><a href=""><span class="icon is-small"><i class="fa fa-table"></i></span>Skill-TTS</a></li>
+			<li><a href=""><span class="icon is-small"><i class="fa fa-table"></i></span>Skill-KWS</a></li>
+
+            <li>
+              <a class=""><i class="fa fa-cog"></i> Settings</a>
+              <ul>
+                <li><a>Profile</a></li>
+
+                <li><a class="is-active" href="enceinte/">Ajout enceinte</a></li>
+              </ul>
+            </li>
+          </ul>
+
+        </nav>
+      </aside>
+
+      <main class="column main">
+        <nav class="breadcrumb is-small" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Enceinte</a></li>
+          </ul>
+        </nav>
+
+        <div class="level has-text-centered	">
+          <div class="level-left">
+            <div class="level-item">
+							<h1 class="subtitle is-3 has-text-primary">Ajouter enceinte</h1>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              <button type="button" class="button is-small">
+                {{ date }}
+              </button>
+            </div>
+          </div>
+        </div>
+				<div class="coulumn">
+					<div class="column-gap">
+						<div style="margin-top:10%">
+						 <div class="center">
+							 <form class="align" action="/enceinte/insert/" method="post">{% csrf_token %}
+								 <label for="ip_adress">Entrer IP de l'enceinte : </label>
+								 <p class="control">
+									<input class="input" type="text" size="20px" id="ip_adress" name="ip_adress" required />
+								</p> <br>
+								 <p class="control">
+									<button type="submit" class="button is-primary is-fullwidth">Ajouter</button>
+								 </p>
+
+							 </form>
+							 <hr />
+							 <a href="/" class="button is-light">Retour</a>
+						 </div>
+						</div>
+					</div>
+				</div>
+      </main>
+    </div>
+  </div>
+
+
+{% endblock %}
