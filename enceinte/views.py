@@ -57,3 +57,6 @@ def host_get(request):
    #return HttpResponse(json.dumps({'hostname' : hostname}), content_type='application/json')
    #return HttpResponse('OK')
    return render(request, 'enceinte/index.html', {'hostname' : hostname})
+   
+ def new_user:
+    return redirect('/')

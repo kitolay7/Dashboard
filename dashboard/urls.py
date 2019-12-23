@@ -23,5 +23,5 @@ urlpatterns = [
     path('', views.home),
     path('enceinte/', views.dashboard),
     path('enceinte/insert/', views.insert),
-    path('host_get/', views.host_get)
-]
+    path('host_get/', views.host_get),
+    path('new_url'/, views.new_user]
